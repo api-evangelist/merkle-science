@@ -1,7 +1,17 @@
 aid: merkle-science
 name: Merkle Science
-description: Merkle Science is a company surfaced as a portfolio company of 500-global and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Merkle Science is a blockchain analytics and predictive crypto risk platform that helps
+  virtual asset businesses, financial institutions, and government agencies detect fraud,
+  monitor transactions, and stay compliant with AML, KYC, and CFT regulations across
+  10,000+ crypto assets. Its product suite includes Compass (transaction and wallet
+  monitoring), Tracker (forensic investigation and fund tracing), KYBB / Know Your
+  Blockchain Business (counterparty due diligence and risk intelligence), Onchain Pulse
+  (ecosystem monitoring and token risk scoring), and Institute (compliance training and
+  certification). The public KYBB API exposes off-chain VASP due-diligence data —
+  KYC/AML posture, supported coins and FIAT, permitted activities, regulatory alerts,
+  licensing and legal-entity records, and jurisdictional restrictions. Merkle Science is
+  backed by 500 Global.
 url: https://raw.githubusercontent.com/api-evangelist/merkle-science/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,17 +19,108 @@ x-backed-by:
 - 500-global
 x-tier: stub
 x-tier-reason: portfolio-lead
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 16
+  pass: local-v1
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
+image: https://www.merklescience.com/
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
-apis: []
+- Blockchain Analytics
+- Cryptocurrency
+- Compliance
+- AML
+- KYC
+- Risk
+- Fraud Detection
+- Due Diligence
+- RegTech
+apis:
+- aid: merkle-science:merkle-science-vasp-entities-api
+  name: Merkle Science VASP Entities API
+  description: Query and retrieve off-chain VASP due-diligence entities.
+  humanURL: https://kybb.docs.merklescience.com/reference/introduction
+  baseURL: https://api.kybb.app.merklescience.com/api/v1
+  tags:
+  - VASP Entities
+  properties:
+  - type: OpenAPI
+    url: openapi/merkle-science-vasp-entities-api-openapi.yml
+  - type: Documentation
+    url: https://kybb.docs.merklescience.com/docs/kybb-introduction
+  - type: APIReference
+    url: https://kybb.docs.merklescience.com/reference/introduction
+  - type: GettingStarted
+    url: https://kybb.docs.merklescience.com/reference/authentication
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: TrustCenter
+  url: security/merkle-science-trust-center.yml
+- type: Compliance
+  url: https://trust.merklescience.com/
+- type: DomainSecurity
+  url: security/merkle-science-domain-security.yml
 - type: Website
   url: https://merklescience.com
+- type: DeveloperPortal
+  url: https://kybb.docs.merklescience.com/
+- type: Documentation
+  url: https://kybb.docs.merklescience.com/docs/kybb-introduction
+- type: APIReference
+  url: https://kybb.docs.merklescience.com/reference/introduction
+- type: GettingStarted
+  url: https://kybb.docs.merklescience.com/reference/authentication
+- type: Authentication
+  url: authentication/merkle-science-authentication.yml
+- type: Blog
+  url: https://blog.merklescience.com/
+- type: Support
+  url: mailto:support@merklescience.com
+- type: GitHubOrganization
+  url: https://github.com/merklescience
+- type: Login
+  url: https://kybb.app.merklescience.com/
+- type: TermsOfService
+  url: https://www.merklescience.com/terms
+- type: PrivacyPolicy
+  url: https://www.merklescience.com/privacy-policy
+- type: LLMsTxt
+  url: llms/merkle-science-llms.txt
+- type: MCPServer
+  url: mcp/merkle-science-mcp.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: Conventions
+  url: conventions/merkle-science-conventions.yml
+- type: ErrorCatalog
+  url: errors/merkle-science-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/merkle-science-lifecycle.yml
+- type: Conformance
+  url: conformance/merkle-science-conformance.yml
+- type: Sandbox
+  url: sandbox/merkle-science-sandbox.yml
+- type: DataModel
+  url: data-model/merkle-science-data-model.yml
+- type: WellKnown
+  url: well-known/merkle-science-well-known.yml
