@@ -1,0 +1,20 @@
+generated: '2026-07-20'
+method: searched
+source: https://kybb.docs.merklescience.com/reference/introduction
+versioning:
+  scheme: uri-path
+  current: v1
+  docs: https://kybb.docs.merklescience.com/reference/introduction
+  evidence: All operations are served under /api/v1/.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  evidence: No deprecation policy or RFC 8594 Sunset/Deprecation header support documented.
+sla:
+  url: null
+status_page: null
+deprecated_operations: []
+notes: >-
+  KYBB exposes a URI-path v1. No public status page, SLA, deprecation policy, or
+  changelog was found for the KYBB API as of the generated date. No StatusPage or
+  Deprecation pointer is emitted because neither is published.

@@ -1,0 +1,41 @@
+generated: '2026-07-20'
+method: searched
+source: https://kybb.docs.merklescience.com/reference/pagination
+authentication:
+  style: api-key
+  header: x-api-key
+  transport: https-only
+  ref: authentication/merkle-science-authentication.yml
+pagination:
+  style: offset-limit
+  params:
+  - {name: limit, description: Number of results to return per page.}
+  - {name: offset, description: Initial index from which to return results.}
+  response_fields:
+  - {name: count, description: Number of items in the list.}
+  - {name: next, description: URL of the next page.}
+  - {name: previous, description: URL of the previous page.}
+  - {name: results, description: Paged data array.}
+  ordering:
+    param: ordering
+    description: Field to use when ordering results.
+idempotency:
+  supported: false
+  notes: Published surface is read-only (GET); no idempotency-key contract is documented.
+error_envelope:
+  media_type: application/json
+  field: detail
+  ref: errors/merkle-science-problem-types.yml
+versioning:
+  style: uri-path
+  current: v1
+  ref: lifecycle/merkle-science-lifecycle.yml
+rate_limiting:
+  documented: false
+metadata:
+  documented: false
+request_tracing:
+  documented: false
+notes: >-
+  Cross-cutting semantics for the KYBB API. Idempotency is not supported (read-only
+  surface), so no Idempotency pointer is emitted.

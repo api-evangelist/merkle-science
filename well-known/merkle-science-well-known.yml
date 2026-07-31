@@ -1,0 +1,20 @@
+generated: '2026-07-20'
+method: searched
+source: live probes of /.well-known/ on Merkle Science hosts
+hosts:
+- host: https://www.merklescience.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+- host: https://kybb.docs.merklescience.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+- host: https://api.kybb.app.merklescience.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+notes: >-
+  No /.well-known/ discovery documents are published on the marketing, docs, or API
+  hosts as of the probe date. Absence is recorded as valid data.

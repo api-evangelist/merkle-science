@@ -1,0 +1,38 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/merkle-science-kybb-openapi.yml
+standards:
+- id: oauth2
+  conforms: false
+  evidence: API uses an x-api-key header, no OAuth2 flows declared.
+- id: oidc
+  conforms: false
+- id: apikey-auth
+  conforms: true
+  evidence: securitySchemes declares an apiKey scheme (x-api-key, in header).
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: 'Error responses use a custom {detail} JSON envelope, not application/problem+json.'
+- id: pagination
+  conforms: true
+  evidence: Offset/limit pagination with count/next/previous/results response fields.
+- id: idempotency
+  conforms: false
+  evidence: All published operations are GET; no idempotency-key contract documented.
+- id: json
+  conforms: true
+  evidence: All request/response payloads are application/json.
+- id: https-only
+  conforms: true
+  evidence: Docs state unencrypted HTTP calls are rejected; all hosts serve TLS 1.3 with HSTS.
+compliance_programs:
+- name: SOC 2
+  source: https://trust.merklescience.com/
+- name: ISO 27001
+  source: https://trust.merklescience.com/
+- name: GDPR
+  source: https://trust.merklescience.com/
+notes: >-
+  Standards are derived from the KYBB OpenAPI. Compliance programs (SOC 2, ISO 27001,
+  GDPR) are published on the Merkle Science trust center and captured in
+  security/merkle-science-trust-center.yml.

@@ -1,0 +1,22 @@
+generated: '2026-07-20'
+method: searched
+source: https://kybb.docs.merklescience.com/reference/authentication
+environments:
+- name: sandbox
+  base_url: https://api.kybb.dev.merklescience.com/
+  description: Development / sandbox host for the KYBB API.
+- name: production
+  base_url: https://api.kybb.app.merklescience.com/
+  description: Production host for the KYBB API.
+separation:
+  mechanism: per-environment base host + per-environment API key
+  key_header: x-api-key
+  notes: >-
+    Sandbox and production are addressed by distinct hostnames (dev vs app), each
+    requiring its own x-api-key. In the Compass product a separate API key is issued
+    per workspace and must be routed into the x-api-key header for the target workspace.
+test_values: []
+notes: >-
+  Merkle Science issues API keys directly rather than via self-service, so no public
+  test credentials or magic identifiers are published. Test-vs-live separation is by
+  host + key. No invented test values are recorded.

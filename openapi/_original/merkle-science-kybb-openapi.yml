@@ -1,0 +1,422 @@
+# generated: '2026-07-20'
+# method: searched
+# source: https://kybb.docs.merklescience.com/reference/introduction
+openapi: 3.1.0
+info:
+  title: Merkle Science KYBB (Know Your Blockchain Business) API
+  version: '1.0'
+  description: 'Merkle Science surveillance KYBB API enriches counterparty due diligence
+    with off-chain data on Virtual Asset Service Providers (VASPs): internal KYC/AML
+    posture, supported coins and FIAT, permitted activities, regulatory alerts, licensing/permissions,
+    legal entities and global restrictions.'
+  contact:
+    name: Merkle Science Support
+    email: support@merklescience.com
+    url: https://kybb.docs.merklescience.com/
+servers:
+- url: https://api.kybb.app.merklescience.com/
+  description: Production
+- url: https://api.kybb.dev.merklescience.com/
+  description: Sandbox
+security:
+- ApiKeyAuth: []
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: x-api-key
+paths:
+  /api/v1/entity/:
+    get:
+      summary: Get List of VASP entities endpoint
+      description: Retrieves list of VASPs
+      operationId: get-list-of-vasp-entities-1
+      parameters:
+      - name: entity_type
+        in: query
+        schema:
+          type: string
+      - name: entity_subtype
+        in: query
+        schema:
+          type: string
+      - name: entity_name
+        in: query
+        schema:
+          type: string
+      - name: legal_entity_countries
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+      - name: limit
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+          format: int32
+      - name: offset
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+          format: int32
+      - name: ordering
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      - name: regulatory_permission_countries
+        in: query
+        description: ISO3166 code https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
+        schema:
+          type: array
+          items:
+            type: string
+      - name: regulatory_status
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+      - name: restricted_countries
+        in: query
+        description: ISO3166 code https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
+        schema:
+          type: array
+          items:
+            type: string
+      - name: supported_countries
+        in: query
+        description: ISO3166 code https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
+        schema:
+          type: array
+          items:
+            type: string
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n  \"count\": 123,\n  \"next\": \"https://api.kybb.dev.merklescience.com/api/v1/entity/?offset=400&limit=100\"\
+                    ,\n  \"previous\": \"https://api.kybb.dev.merklescience.com/api/v1/entity/?offset=200&limit=100\"\
+                    ,\n  \"results\": [\n    {\n      \"entity_name\": \"string\"\
+                    ,\n      \"slug\": \"string\",\n      \"entity_type\": \"string\"\
+                    ,\n      \"entity_subtype\": \"string\",\n      \"website\": \"\
+                    string\"\n    }\n  ]\n}"
+              schema:
+                type: object
+                properties:
+                  count:
+                    type: integer
+                    example: 123
+                    default: 0
+                  next:
+                    type: string
+                    example: https://api.kybb.dev.merklescience.com/api/v1/entity/?offset=400&limit=100
+                  previous:
+                    type: string
+                    example: https://api.kybb.dev.merklescience.com/api/v1/entity/?offset=200&limit=100
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        entity_name:
+                          type: string
+                          example: string
+                        slug:
+                          type: string
+                          example: string
+                        entity_type:
+                          type: string
+                          example: string
+                        entity_subtype:
+                          type: string
+                          example: string
+                        website:
+                          type: string
+                          example: string
+        '401':
+          description: '401'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n    \"detail\": \"Invalid API Key.\"\n}"
+              schema:
+                type: object
+                properties:
+                  detail:
+                    type: string
+                    example: Invalid API Key.
+        '404':
+          description: '404'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n    \"detail\": \"Not found.\"\n}"
+              schema:
+                type: object
+                properties:
+                  detail:
+                    type: string
+                    example: Not found.
+      deprecated: false
+      tags:
+      - VASP Entities
+  /api/v1/entity/{slug}/:
+    get:
+      summary: Retrieve Entity Details endpoint
+      description: Retrieves off-chain details of a given VASP
+      operationId: get-vasp-details
+      parameters:
+      - name: slug
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n  \"slug\": \"string\",\n  \"entity_name\": \"string\"\
+                    ,\n  \"media_links\": [\n    {\n      \"media_provider\": \"string\"\
+                    ,\n      \"media_url\": \"string\"\n    }\n  ],\n  \"regulatory_alerts\"\
+                    : [\n    {\n      \"country\": \"st\",\n      \"regulatory_authority\"\
+                    : \"string\",\n      \"alert_type\": \"string\",\n      \"comment\"\
+                    : \"string\",\n      \"alert_date\": \"string\"\n    }\n  ],\n\
+                    \  \"kyc\": {\n    \"kyc_is_mandatory\": true,\n    \"conducts_aml\"\
+                    : true,\n    \"kyc_requires_personal_info\": true,\n    \"kyc_requires_identification\"\
+                    : true,\n    \"kyc_requires_photograph\": true,\n    \"kyc_requires_proof_of_residence\"\
+                    : true,\n    \"has_business_kyc\": true,\n    \"kyc_structure\"\
+                    : \"string\",\n    \"comment\": \"string\"\n  },\n  \"regulatory_permissions\"\
+                    : [\n    {\n      \"license_country\": \"AF\",\n      \"state\"\
+                    : \"string\",\n      \"regulatory_authority\": \"string\",\n \
+                    \     \"permission_type\": \"string\",\n      \"permitted_activity\"\
+                    : \"string\",\n      \"permission_status\": \"string\",\n    \
+                    \  \"legal_name\": \"string\",\n      \"permission_number\": \"\
+                    string\",\n      \"permission_start_date\": \"string\",\n    \
+                    \  \"permission_end_date\": \"string\",\n      \"comment\": \"\
+                    string\"\n    }\n  ],\n  \"legal_entities\": [\n    {\n      \"\
+                    legal_name\": \"string\",\n      \"country_of_incorporation\"\
+                    : \"AF\",\n      \"state\": \"string\",\n      \"date_of_incorporation\"\
+                    : \"string\",\n      \"company_registration_number\": \"string\"\
+                    ,\n      \"comment\": \"string\"\n    }\n  ],\n  \"assets\": [\n\
+                    \    {\n      \"symbol\": \"string\",\n      \"name\": \"string\"\
+                    ,\n      \"asset_type\": \"string\"\n    }\n  ],\n  \"jurisdiction\"\
+                    : [\n    {\n      \"is_restricted\": true,\n      \"country_name\"\
+                    : \"AF\"\n    }\n  ],\n  \"notes\": [\n    {\n      \"comment\"\
+                    : \"string\"\n    }\n  ]\n}"
+              schema:
+                type: object
+                properties:
+                  slug:
+                    type: string
+                    example: string
+                  entity_name:
+                    type: string
+                    example: string
+                  media_links:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        media_provider:
+                          type: string
+                          example: string
+                        media_url:
+                          type: string
+                          example: string
+                  regulatory_alerts:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        country:
+                          type: string
+                          example: st
+                        regulatory_authority:
+                          type: string
+                          example: string
+                        alert_type:
+                          type: string
+                          example: string
+                        comment:
+                          type: string
+                          example: string
+                        alert_date:
+                          type: string
+                          example: string
+                  kyc:
+                    type: object
+                    properties:
+                      kyc_is_mandatory:
+                        type: boolean
+                        example: true
+                        default: true
+                      conducts_aml:
+                        type: boolean
+                        example: true
+                        default: true
+                      kyc_requires_personal_info:
+                        type: boolean
+                        example: true
+                        default: true
+                      kyc_requires_identification:
+                        type: boolean
+                        example: true
+                        default: true
+                      kyc_requires_photograph:
+                        type: boolean
+                        example: true
+                        default: true
+                      kyc_requires_proof_of_residence:
+                        type: boolean
+                        example: true
+                        default: true
+                      has_business_kyc:
+                        type: boolean
+                        example: true
+                        default: true
+                      kyc_structure:
+                        type: string
+                        example: string
+                      comment:
+                        type: string
+                        example: string
+                  regulatory_permissions:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        license_country:
+                          type: string
+                          example: AF
+                        state:
+                          type: string
+                          example: string
+                        regulatory_authority:
+                          type: string
+                          example: string
+                        permission_type:
+                          type: string
+                          example: string
+                        permitted_activity:
+                          type: string
+                          example: string
+                        permission_status:
+                          type: string
+                          example: string
+                        legal_name:
+                          type: string
+                          example: string
+                        permission_number:
+                          type: string
+                          example: string
+                        permission_start_date:
+                          type: string
+                          example: string
+                        permission_end_date:
+                          type: string
+                          example: string
+                        comment:
+                          type: string
+                          example: string
+                  legal_entities:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        legal_name:
+                          type: string
+                          example: string
+                        country_of_incorporation:
+                          type: string
+                          example: AF
+                        state:
+                          type: string
+                          example: string
+                        date_of_incorporation:
+                          type: string
+                          example: string
+                        company_registration_number:
+                          type: string
+                          example: string
+                        comment:
+                          type: string
+                          example: string
+                  assets:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        symbol:
+                          type: string
+                          example: string
+                        name:
+                          type: string
+                          example: string
+                        asset_type:
+                          type: string
+                          example: string
+                  jurisdiction:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        is_restricted:
+                          type: boolean
+                          example: true
+                          default: true
+                        country_name:
+                          type: string
+                          example: AF
+                  notes:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        comment:
+                          type: string
+                          example: string
+        '401':
+          description: '401'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n    \"detail\": \"Invalid API Key.\"\n}"
+              schema:
+                type: object
+                properties:
+                  detail:
+                    type: string
+                    example: Invalid API Key.
+        '404':
+          description: '404'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n    \"detail\": \"Not found.\"\n}"
+              schema:
+                type: object
+                properties:
+                  detail:
+                    type: string
+                    example: Not found.
+      deprecated: false
+      tags:
+      - VASP Entities
+tags:
+- name: VASP Entities
+  description: Query and retrieve off-chain VASP due-diligence entities.

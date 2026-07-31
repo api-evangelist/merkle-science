@@ -1,0 +1,9 @@
+generated: '2026-07-20'
+method: generated
+skills:
+- file: merkle-science-vasp-due-diligence.md
+  name: Screen a VASP for counterparty due diligence
+  api: openapi/merkle-science-kybb-openapi.yml
+  operations:
+  - get-list-of-vasp-entities-1
+  - get-vasp-details

@@ -1,0 +1,23 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Merkle Science KYBB API
+  version: 1.0.0
+extends: openapi/merkle-science-kybb-openapi.yml
+actions:
+- target: $.info
+  update:
+    x-apievangelist-enriched: '2026-07-20'
+    x-apievangelist-provider: merkle-science
+    x-apievangelist-category: blockchain-compliance
+- target: $.servers
+  update:
+  - url: https://api.kybb.app.merklescience.com/
+    description: Production
+  - url: https://api.kybb.dev.merklescience.com/
+    description: Sandbox
+- target: "$.paths['/api/v1/entity/'].get"
+  update:
+    x-pagination: {style: offset-limit, params: [limit, offset], response_fields: [count, next, previous, results]}
+- target: "$.paths['/api/v1/entity/{slug}/'].get"
+  update:
+    x-agentic-access: {action-class: connected, consequence: read}

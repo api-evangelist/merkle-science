@@ -1,0 +1,17 @@
+generated: '2026-07-20'
+method: searched
+probe: true
+source: https://trust.merklescience.com/
+url: https://trust.merklescience.com/
+certifications:
+- SOC 2
+- ISO 27001
+- GDPR
+evidence:
+- source: https://trust.merklescience.com/
+  keywords:
+  - soc 2
+  - soc2
+  - iso 27001
+  - trust center
+  - gdpr

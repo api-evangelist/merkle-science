@@ -1,0 +1,37 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/merkle-science-kybb-openapi.yml
+entities:
+- name: VASPEntity
+  key: slug
+  description: A Virtual Asset Service Provider profile (off-chain due-diligence record).
+  fields: [slug, entity_name, entity_type, entity_subtype, website]
+- name: MediaLink
+  fields: [media_provider, media_url]
+- name: RegulatoryAlert
+  fields: [country, regulatory_authority, alert_type, comment, alert_date]
+- name: KYCProfile
+  fields: [kyc_is_mandatory, conducts_aml, kyc_requires_personal_info, kyc_requires_identification, kyc_requires_photograph, kyc_requires_proof_of_residence, has_business_kyc, kyc_structure, comment]
+- name: RegulatoryPermission
+  fields: [license_country, state, regulatory_authority, permission_type, permitted_activity, permission_status, legal_name, permission_number, permission_start_date, permission_end_date, comment]
+- name: LegalEntity
+  fields: [legal_name, country_of_incorporation, state, date_of_incorporation, company_registration_number, comment]
+- name: Asset
+  fields: [symbol, name, asset_type]
+- name: Jurisdiction
+  fields: [is_restricted, country_name]
+- name: Note
+  fields: [comment]
+relationships:
+- {from: VASPEntity, to: MediaLink, type: has_many, via: media_links, embedded: true}
+- {from: VASPEntity, to: RegulatoryAlert, type: has_many, via: regulatory_alerts, embedded: true}
+- {from: VASPEntity, to: KYCProfile, type: has_one, via: kyc, embedded: true}
+- {from: VASPEntity, to: RegulatoryPermission, type: has_many, via: regulatory_permissions, embedded: true}
+- {from: VASPEntity, to: LegalEntity, type: has_many, via: legal_entities, embedded: true}
+- {from: VASPEntity, to: Asset, type: has_many, via: assets, embedded: true}
+- {from: VASPEntity, to: Jurisdiction, type: has_many, via: jurisdiction, embedded: true}
+- {from: VASPEntity, to: Note, type: has_many, via: notes, embedded: true}
+notes: >-
+  Derived from the KYBB OpenAPI response schemas. Child objects are embedded inline in
+  the VASPEntity detail response (no separate endpoints or id references); the list
+  endpoint returns a lightweight VASPEntity projection keyed by slug.

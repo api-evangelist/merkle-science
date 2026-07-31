@@ -1,0 +1,14 @@
+{
+  "provider": "merkle-science",
+  "sources": [
+    "merkle-science-vasp-entities-api-openapi.yml"
+  ],
+  "outputs": [
+    "merkle-science-vasp-entities-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

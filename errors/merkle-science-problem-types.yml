@@ -1,0 +1,29 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/merkle-science-kybb-openapi.yml
+format: custom
+envelope:
+  field: detail
+  media_type: application/json
+  example: '{"detail": "Invalid API Key."}'
+notes: >-
+  The KYBB API does not use RFC 9457 problem+json. Errors are returned as a JSON object
+  with a single "detail" string. Problems below are derived from the documented 4xx
+  responses across all operations.
+problems:
+- status: 401
+  title: Unauthorized
+  detail: Invalid API Key.
+  cause: Missing or invalid x-api-key header.
+  remediation: Supply a valid x-api-key issued by Merkle Science over HTTPS.
+  source_operations:
+  - openapi/merkle-science-kybb-openapi.yml#get-list-of-vasp-entities-1
+  - openapi/merkle-science-kybb-openapi.yml#get-vasp-details
+- status: 404
+  title: Not Found
+  detail: Not found.
+  cause: The requested VASP entity slug does not exist.
+  remediation: Verify the slug returned by the list endpoint before requesting details.
+  source_operations:
+  - openapi/merkle-science-kybb-openapi.yml#get-list-of-vasp-entities-1
+  - openapi/merkle-science-kybb-openapi.yml#get-vasp-details

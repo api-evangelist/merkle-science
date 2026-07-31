@@ -1,0 +1,23 @@
+generated: '2026-07-20'
+method: searched
+source: openapi/merkle-science-kybb-openapi.yml
+docs: https://kybb.docs.merklescience.com/reference/authentication
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+notes: >-
+  The KYBB API authenticates every request with an API key passed in the x-api-key
+  request header. All requests must use HTTPS; unencrypted HTTP calls and requests
+  missing the header are rejected. API keys are issued directly by Merkle Science
+  (there is no self-service key provisioning); contact support@merklescience.com to
+  obtain one. Separate keys apply per environment (sandbox vs production) and, in the
+  Compass product, per workspace.
+schemes:
+- name: ApiKeyAuth
+  type: apiKey
+  in: header
+  parameter: x-api-key
+  sources:
+  - openapi/merkle-science-kybb-openapi.yml
