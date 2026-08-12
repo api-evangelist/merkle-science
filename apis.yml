@@ -74,6 +74,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Overlay
+  url: overlays/merkle-science-kybb-overlay.yaml
 - type: TrustCenter
   url: security/merkle-science-trust-center.yml
 - type: Compliance
