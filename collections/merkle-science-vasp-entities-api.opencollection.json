@@ -1,0 +1,118 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Merkle Science KYBB (Know Your Blockchain Business) VASP Entities API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-api-key",
+      "value": "{{x-api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "VASP Entities",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get List of VASP entities endpoint",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.kybb.app.merklescience.com/api/v1/entity/",
+            "params": [
+              {
+                "name": "entity_type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "entity_subtype",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "entity_name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "legal_entity_countries",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Number of results to return per page."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The initial index from which to return the results."
+              },
+              {
+                "name": "ordering",
+                "value": "",
+                "type": "query",
+                "description": "Which field to use when ordering the results."
+              },
+              {
+                "name": "regulatory_permission_countries",
+                "value": "",
+                "type": "query",
+                "description": "ISO3166 code https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+              },
+              {
+                "name": "regulatory_status",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "restricted_countries",
+                "value": "",
+                "type": "query",
+                "description": "ISO3166 code https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+              },
+              {
+                "name": "supported_countries",
+                "value": "",
+                "type": "query",
+                "description": "ISO3166 code https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+              }
+            ]
+          },
+          "docs": "Retrieves list of VASPs"
+        },
+        {
+          "info": {
+            "name": "Retrieve Entity Details endpoint",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.kybb.app.merklescience.com/api/v1/entity/:slug/",
+            "params": [
+              {
+                "name": "slug",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieves off-chain details of a given VASP"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,722 @@
+{
+  "item": [
+    {
+      "id": "aeb33395-1cc0-478f-9ae1-67a48c6c7ad1",
+      "name": "VASP Entities",
+      "description": {
+        "content": "Query and retrieve off-chain VASP due-diligence entities.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5ad4cde1-85ed-4b35-b519-6754e874d89a",
+          "name": "Get List of VASP entities endpoint",
+          "request": {
+            "name": "Get List of VASP entities endpoint",
+            "description": {
+              "content": "Retrieves list of VASPs",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "entity",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "entity_type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "entity_subtype",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "entity_name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "legal_entity_countries",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "legal_entity_countries",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>",
+                  "description": "Number of results to return per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>",
+                  "description": "The initial index from which to return the results."
+                },
+                {
+                  "disabled": false,
+                  "key": "ordering",
+                  "value": "<string>",
+                  "description": "Which field to use when ordering the results."
+                },
+                {
+                  "disabled": false,
+                  "key": "regulatory_permission_countries",
+                  "value": "<string>",
+                  "description": "ISO3166 code https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+                },
+                {
+                  "disabled": false,
+                  "key": "regulatory_permission_countries",
+                  "value": "<string>",
+                  "description": "ISO3166 code https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+                },
+                {
+                  "disabled": false,
+                  "key": "regulatory_status",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "regulatory_status",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "restricted_countries",
+                  "value": "<string>",
+                  "description": "ISO3166 code https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+                },
+                {
+                  "disabled": false,
+                  "key": "restricted_countries",
+                  "value": "<string>",
+                  "description": "ISO3166 code https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+                },
+                {
+                  "disabled": false,
+                  "key": "supported_countries",
+                  "value": "<string>",
+                  "description": "ISO3166 code https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+                },
+                {
+                  "disabled": false,
+                  "key": "supported_countries",
+                  "value": "<string>",
+                  "description": "ISO3166 code https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "07602d86-66f8-419c-ab7c-816109848bec",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "entity",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "entity_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "entity_subtype",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "entity_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "legal_entity_countries",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "legal_entity_countries",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "regulatory_permission_countries",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "regulatory_permission_countries",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "regulatory_status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "regulatory_status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "restricted_countries",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "restricted_countries",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "supported_countries",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "supported_countries",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n  \\\"count\\\": 123,\\n  \\\"next\\\": \\\"https://api.kybb.dev.merklescience.com/api/v1/entity/?offset=400&limit=100\\\",\\n  \\\"previous\\\": \\\"https://api.kybb.dev.merklescience.com/api/v1/entity/?offset=200&limit=100\\\",\\n  \\\"results\\\": [\\n    {\\n      \\\"entity_name\\\": \\\"string\\\",\\n      \\\"slug\\\": \\\"string\\\",\\n      \\\"entity_type\\\": \\\"string\\\",\\n      \\\"entity_subtype\\\": \\\"string\\\",\\n      \\\"website\\\": \\\"string\\\"\\n    }\\n  ]\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "403f71fc-8066-4831-8370-2f42ecabf999",
+              "name": "401",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "entity",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "entity_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "entity_subtype",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "entity_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "legal_entity_countries",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "legal_entity_countries",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "regulatory_permission_countries",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "regulatory_permission_countries",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "regulatory_status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "regulatory_status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "restricted_countries",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "restricted_countries",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "supported_countries",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "supported_countries",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n    \\\"detail\\\": \\\"Invalid API Key.\\\"\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "910afd02-dedb-4885-851a-0a966b0c87aa",
+              "name": "404",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "entity",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "entity_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "entity_subtype",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "entity_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "legal_entity_countries",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "legal_entity_countries",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "regulatory_permission_countries",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "regulatory_permission_countries",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "regulatory_status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "regulatory_status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "restricted_countries",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "restricted_countries",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "supported_countries",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "supported_countries",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n    \\\"detail\\\": \\\"Not found.\\\"\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5be2b58a-e982-426e-b652-4db68f9bda89",
+          "name": "Retrieve Entity Details endpoint",
+          "request": {
+            "name": "Retrieve Entity Details endpoint",
+            "description": {
+              "content": "Retrieves off-chain details of a given VASP",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "entity",
+                ":slug",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "slug",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cdae3f36-b006-4806-ac6d-f3b8cda3c93e",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "entity",
+                    ":slug",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "slug",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n  \\\"slug\\\": \\\"string\\\",\\n  \\\"entity_name\\\": \\\"string\\\",\\n  \\\"media_links\\\": [\\n    {\\n      \\\"media_provider\\\": \\\"string\\\",\\n      \\\"media_url\\\": \\\"string\\\"\\n    }\\n  ],\\n  \\\"regulatory_alerts\\\": [\\n    {\\n      \\\"country\\\": \\\"st\\\",\\n      \\\"regulatory_authority\\\": \\\"string\\\",\\n      \\\"alert_type\\\": \\\"string\\\",\\n      \\\"comment\\\": \\\"string\\\",\\n      \\\"alert_date\\\": \\\"string\\\"\\n    }\\n  ],\\n  \\\"kyc\\\": {\\n    \\\"kyc_is_mandatory\\\": true,\\n    \\\"conducts_aml\\\": true,\\n    \\\"kyc_requires_personal_info\\\": true,\\n    \\\"kyc_requires_identification\\\": true,\\n    \\\"kyc_requires_photograph\\\": true,\\n    \\\"kyc_requires_proof_of_residence\\\": true,\\n    \\\"has_business_kyc\\\": true,\\n    \\\"kyc_structure\\\": \\\"string\\\",\\n    \\\"comment\\\": \\\"string\\\"\\n  },\\n  \\\"regulatory_permissions\\\": [\\n    {\\n      \\\"license_country\\\": \\\"AF\\\",\\n      \\\"state\\\": \\\"string\\\",\\n      \\\"regulatory_authority\\\": \\\"string\\\",\\n      \\\"permission_type\\\": \\\"string\\\",\\n      \\\"permitted_activity\\\": \\\"string\\\",\\n      \\\"permission_status\\\": \\\"string\\\",\\n      \\\"legal_name\\\": \\\"string\\\",\\n      \\\"permission_number\\\": \\\"string\\\",\\n      \\\"permission_start_date\\\": \\\"string\\\",\\n      \\\"permission_end_date\\\": \\\"string\\\",\\n      \\\"comment\\\": \\\"string\\\"\\n    }\\n  ],\\n  \\\"legal_entities\\\": [\\n    {\\n      \\\"legal_name\\\": \\\"string\\\",\\n      \\\"country_of_incorporation\\\": \\\"AF\\\",\\n      \\\"state\\\": \\\"string\\\",\\n      \\\"date_of_incorporation\\\": \\\"string\\\",\\n      \\\"company_registration_number\\\": \\\"string\\\",\\n      \\\"comment\\\": \\\"string\\\"\\n    }\\n  ],\\n  \\\"assets\\\": [\\n    {\\n      \\\"symbol\\\": \\\"string\\\",\\n      \\\"name\\\": \\\"string\\\",\\n      \\\"asset_type\\\": \\\"string\\\"\\n    }\\n  ],\\n  \\\"jurisdiction\\\": [\\n    {\\n      \\\"is_restricted\\\": true,\\n      \\\"country_name\\\": \\\"AF\\\"\\n    }\\n  ],\\n  \\\"notes\\\": [\\n    {\\n      \\\"comment\\\": \\\"string\\\"\\n    }\\n  ]\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c856da83-2243-4fcc-b75c-640cb488fcfa",
+              "name": "401",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "entity",
+                    ":slug",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "slug",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n    \\\"detail\\\": \\\"Invalid API Key.\\\"\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cd184a7c-55b7-4530-93b3-908493249efa",
+              "name": "404",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "entity",
+                    ":slug",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "slug",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n    \\\"detail\\\": \\\"Not found.\\\"\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.kybb.app.merklescience.com/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "69e0353a-451b-4ee5-95f3-dc93291964b0",
+    "name": "Merkle Science KYBB (Know Your Blockchain Business) VASP Entities API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Merkle Science surveillance KYBB API enriches counterparty due diligence with off-chain data on Virtual Asset Service Providers (VASPs): internal KYC/AML posture, supported coins and FIAT, permitted activities, regulatory alerts, licensing/permissions, legal entities and global restrictions.\n\nContact Support:\n Name: Merkle Science Support\n Email: support@merklescience.com",
+      "type": "text/plain"
+    }
+  }
+}

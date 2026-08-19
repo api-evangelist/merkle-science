@@ -5,10 +5,9 @@ source: openapi/merkle-science-kybb-openapi.yml
 server:
   name: merkle-science-kybb
   transport: http
-notes: >-
-  No official hosted or remote MCP server was found for Merkle Science as of the
-  generated date. The tools below are a candidate surface derived one-to-one from the
-  KYBB OpenAPI operations; treat as a starting point, not a published server.
+notes: No official hosted or remote MCP server was found for Merkle Science as of the generated date.
+  The tools below are a candidate surface derived one-to-one from the KYBB OpenAPI operations; treat as
+  a starting point, not a published server.
 tools:
 - name: list_vasp_entities
   description: Retrieve a filtered, paginated list of VASP entities.
@@ -16,3 +15,9 @@ tools:
 - name: get_vasp_details
   description: Retrieve the off-chain due-diligence details of a single VASP by slug.
   source_operation: openapi/merkle-science-kybb-openapi.yml#get-vasp-details
+deployment:
+  mode: none
+  verified: derived
+  tools: 2
+  checked: '2026-08-12'
+  source: catalog MCP census
