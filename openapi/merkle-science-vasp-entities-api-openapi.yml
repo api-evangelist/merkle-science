@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Merkle Science KYBB (Know Your Blockchain Business) VASP Entities API
+  title: Merkle Science KYBB (Know Your Blockchain Business) VASP…
   version: '1.0'
   description: 'Merkle Science surveillance KYBB API enriches counterparty due diligence with off-chain data on Virtual Asset Service Providers (VASPs): internal KYC/AML posture, supported coins and FIAT, permitted activities, regulatory alerts, licensing/permissions, legal entities and global restrictions.'
   contact:
